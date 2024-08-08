@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface CardListWrapperProps {
+    direction?: 'row' | 'column'; 
+}
+
 export const H1 = styled.h1`
     font-weight: 700;
     color: #fff;
@@ -30,8 +34,9 @@ export const MovieInfoWrapper = styled.div`
     z-index: 10;
 `;
 
-export const CardListWrapper = styled.div`
+export const CardListWrapper = styled.div<CardListWrapperProps>`
     display: flex;
     align-items: center;
+    flex-direction: ${props => props.direction || 'row'};
     justify-content: space-around;
 `;
