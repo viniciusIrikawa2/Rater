@@ -1,11 +1,11 @@
-import './App.css';
+import MovieCard from "./components/MovieCard/MovieCard";
 
 function App() {
   return (
     <>
-      Home page
+      <MovieCard/>
     </>
   )
 }
 
-export default App
+export default App;
