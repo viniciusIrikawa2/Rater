@@ -1,6 +1,7 @@
+import { H3, MovieInfoWrapper, Overlay } from "../../styles.utils/styles";
 import BtnWatchTrailer from "../Buttons/BtnWatchTrailer";
 import Rating from "../Ratings/Rating";
-import { Card, H3, MovieInfoWrapper, Overlay } from "./styles";
+import { Card } from "./styles";
 
 const MovieCard = () => {
   return (
@@ -10,7 +11,7 @@ const MovieCard = () => {
         <H3> Divertidamente </H3>
         <BtnWatchTrailer/>
       </MovieInfoWrapper>
-      <Overlay></Overlay>
+      <Overlay/>
     </Card>
   )
 }
