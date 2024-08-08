@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
+export const H1 = styled.h1`
+    font-weight: 700;
+    color: #fff;
+    line-height: 48.41px;
+`;
+
 export const H3 = styled.h3`
     color: #fff;
     font-weight: 700;
-    font-family: system-ui;
     font-size: 24px;
     margin: 0px 0px 10px 0px;
 `;
