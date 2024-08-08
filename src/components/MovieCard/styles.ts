@@ -26,13 +26,12 @@ export const Overlay = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 5;
 `;
 
 export const MovieInfoWrapper = styled.div`
-
     position: absolute;
     bottom: 10%;
     left: 5%; 
-    z-index: 20;
+    z-index: 10;
 `;

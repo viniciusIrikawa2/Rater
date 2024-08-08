@@ -11,4 +11,12 @@ export const Button = styled.button`
     border: none;
     font-weight: 600;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+`;
+
+export const IconPlay = styled.img`
+    width: 20px;
+    height: 20px;
 `;
