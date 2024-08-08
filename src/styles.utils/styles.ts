@@ -29,3 +29,9 @@ export const MovieInfoWrapper = styled.div`
     left: 5%; 
     z-index: 10;
 `;
+
+export const CardListWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+`;

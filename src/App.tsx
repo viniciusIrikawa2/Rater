@@ -1,13 +1,11 @@
-import CelebritiesCard from "./components/CelebritiesCard/CelebritiesCard";
-import FeaturedCard from "./components/FeaturedCard/FeaturedCard";
-import MovieCard from "./components/MovieCard/MovieCard";
+import Section from "./components/Section/Section";
 
 function App() {
   return (
     <>
-      <MovieCard/>
-      <CelebritiesCard/>
-      <FeaturedCard/>
+      <Section sectionName='Últimos lançamentos'/>
+      <Section sectionName='Recomendados'/>
+      <Section sectionName='Celebridades'/>
     </>
   )
 }

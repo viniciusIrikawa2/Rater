@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const H2 = styled.h2`
-    color: black;
+    color: #ffff;
     font-family: system-ui;
-    margin-left: 20px;
+    margin: 0px 0px 20px 20px;
     display: flex;
     align-items: center;
 
@@ -11,9 +11,9 @@ export const H2 = styled.h2`
         content: '';
         width: 5px;
         height: 30px;
-        background-color: black;
+        background-color: #ffff;
         display: inline-block;
-        margin-right: 5px;
+        margin-right: 8px;
         border-radius: 5px;
     }
 `;
