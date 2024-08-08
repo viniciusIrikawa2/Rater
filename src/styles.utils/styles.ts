@@ -38,5 +38,4 @@ export const CardListWrapper = styled.div<CardListWrapperProps>`
     display: flex;
     align-items: center;
     flex-direction: ${props => props.direction || 'row'};
-    justify-content: space-around;
 `;
