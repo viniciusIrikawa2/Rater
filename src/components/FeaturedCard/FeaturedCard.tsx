@@ -6,6 +6,7 @@ import FeatureLabel from "../Labels/FeatureLabel"
 import { Card, P, Span, Wrapper } from './styles'
 import { MovieDetails } from "../@Types/movies"
 import Rating from "../MovieInfo/Ratings/Rating"
+import { convertDurationToHours } from "../../functions/helpers"
 
 const FeaturedCard = () => {
   const [movieDetails, setMovieDetails] = useState<MovieDetails>();
@@ -37,7 +38,7 @@ const FeaturedCard = () => {
             <Wrapper>
               <Rating rating={movieDetails?.vote_average} backgroundColor={false}/> 
               <Span>| {movieDetails?.vote_count} </Span>
-              <Span> {movieDetails?.runtime} </Span>
+              <Span> {convertDurationToHours(movieDetails?.runtime!)} </Span>
               <Span> • {genres} • </Span>
               <Span> {movieDetails?.release_date.substring(0, 4)} </Span>
             </Wrapper>

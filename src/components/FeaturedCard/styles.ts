@@ -13,7 +13,6 @@ export const Card = styled.div<{ imageUrl: string }>`
 `;
 
 export const Wrapper = styled.div`
-    border: 2px solid red;
     display: flex;
     align-items: center;
 `;
