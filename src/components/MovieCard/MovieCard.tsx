@@ -6,7 +6,7 @@ import { Card } from "./styles";
 const MovieCard = () => {
   return (
     <Card>
-      <Rating backgroundColor={true}/>
+      <Rating rating={5.2} backgroundColor={true}/>
       <MovieInfoWrapper>
         <H3> Divertidamente </H3>
         <BtnWatchTrailer/>

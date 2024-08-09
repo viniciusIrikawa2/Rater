@@ -1,14 +1,15 @@
 import { IconStar, RatingWrapper } from "./styles";
 
 interface IBackgroundColorProps {
+  rating: number | undefined,
   backgroundColor: boolean
 }
 
-const Rating = ({ backgroundColor }: IBackgroundColorProps) => {
+const Rating = ({ rating, backgroundColor }: IBackgroundColorProps) => {
   return (
     <RatingWrapper backgroundColor={backgroundColor}>
         <IconStar src="/icons/star.png" alt="starIcon"/>
-        <span> 8.1</span>
+        <span> {rating?.toFixed(1)} </span>
     </RatingWrapper>
   )
 }

@@ -30,7 +30,7 @@ const FeaturedCard = () => {
            <FeatureLabel/>
             <H1> {featuredMovie?.original_title} </H1>
             <Wrapper>
-              <Rating backgroundColor={false}/>
+              <Rating rating={featuredMovie?.vote_average} backgroundColor={false}/>
             </Wrapper>
             <P>{featuredMovie?.overview}</P>
             <BtnWatchTrailer/>
