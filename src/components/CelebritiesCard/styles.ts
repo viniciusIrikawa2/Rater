@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Card = styled.div`
     width: 268.8px;
     height: 253.67px;
+    margin: 2% 1% 2% 0;
     border-radius: 24px;
     background-image: url('/actors/robert_downey.png');
     background-size: cover;

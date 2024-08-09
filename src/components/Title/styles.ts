@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const H2 = styled.h2`
     color: #ffff;
     font-family: system-ui;
-    margin: 0px 0px 0px 20px;
     display: flex;
     align-items: center;
 

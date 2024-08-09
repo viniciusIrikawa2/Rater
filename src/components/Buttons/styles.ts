@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+export const Button = styled.a`
     width: 184px;
-    height: 40px;
-    border-radius: 12px;
+    height: 20px;
+    border-radius: 10px;
     padding: 12px;
     color: #EEEEEE;
     backdrop-filter: blur(12px);
     background-color: #EEEEEE40;
     border: none;
+    text-decoration: none;
+    cursor: pointer;
     font-weight: 600;
     font-size: 16px;
     display: flex;

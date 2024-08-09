@@ -12,7 +12,7 @@ const MainSection = () => {
 
         <SecondaryFeaturedWrapper>
             <CardListWrapper direction="column">
-                <Section sectionName="Destaques também" direction="column"/>
+                <Section sectionName="Destaques também" direction="column" cardType="movie"/>
             </CardListWrapper>
         </SecondaryFeaturedWrapper>
     </MainContainer>

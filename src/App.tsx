@@ -6,9 +6,9 @@ function App() {
   return (
     <>
       <MainSection/>
-      <Section sectionName='Últimos lançamentos' direction="row"/>
-      <Section sectionName='Recomendados' direction="row"/>
-      <Section sectionName='Celebridades' direction="row"/>
+      <Section sectionName='Últimos lançamentos' direction="row" cardType="movie"/>
+      <Section sectionName='Recomendados' direction="row" cardType="movie"/>
+      <Section sectionName='Celebridades' direction="row" cardType="celebrity"/>
       <Footer/>
     </>
   )
