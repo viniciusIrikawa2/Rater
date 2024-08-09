@@ -1,6 +1,6 @@
 import { H3, MovieInfoWrapper, Overlay } from "../../styles.utils/styles";
 import BtnWatchTrailer from "../Buttons/BtnWatchTrailer";
-import Rating from "../Ratings/Rating";
+import Rating from "../MovieInfo/Ratings/Rating";
 import { Card } from "./styles";
 
 const MovieCard = () => {

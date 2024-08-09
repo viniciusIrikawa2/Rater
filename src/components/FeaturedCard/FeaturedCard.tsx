@@ -3,9 +3,9 @@ import { getNowPlayingMovies } from "../../services/movies/movies"
 import { H1, MovieInfoWrapper, Overlay } from "../../styles.utils/styles"
 import BtnWatchTrailer from "../Buttons/BtnWatchTrailer"
 import FeatureLabel from "../Labels/FeatureLabel"
-import { Card, P, Wrapper } from './styles'
+import { Card, P, Span, Wrapper } from './styles'
 import { Movie } from "../@Types/movies"
-import Rating from "../Ratings/Rating"
+import Rating from "../MovieInfo/Ratings/Rating"
 
 const FeaturedCard = () => {
   const [featuredMovie, setFeaturedMovie] = useState<Movie>();
@@ -30,7 +30,10 @@ const FeaturedCard = () => {
            <FeatureLabel/>
             <H1> {featuredMovie?.original_title} </H1>
             <Wrapper>
-              <Rating rating={featuredMovie?.vote_average} backgroundColor={false}/>
+              <Rating rating={featuredMovie?.vote_average} backgroundColor={false}/> 
+              <Span>| {featuredMovie?.vote_count} </Span>
+              {/* <Span> * Comedy, Action, Adventure, Superhero... * </Span> */}
+              <Span> {featuredMovie?.release_date.substring(0, 4)} </Span>
             </Wrapper>
             <P>{featuredMovie?.overview}</P>
             <BtnWatchTrailer/>

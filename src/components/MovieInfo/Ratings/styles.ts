@@ -23,3 +23,7 @@ export const IconStar = styled.img`
     height: 20px;
     margin-right: 5px;
 `;
+
+export const P = styled.img`
+    color: #B4B4B4;
+`;
