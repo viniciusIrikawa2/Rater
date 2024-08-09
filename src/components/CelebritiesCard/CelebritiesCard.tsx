@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Age, Card, H3, TitleWrapper } from "./styles";
 import { getActorDetails, getActors } from "../../services/actors/actors";
 import { Actor } from "../@Types/actors";
+import { returnAge } from "../../functions/helpers";
 
 const CelebritiesCard = () => {
   const [actorsList, setActorList] = useState<Actor[]>([]);
@@ -32,11 +33,11 @@ const CelebritiesCard = () => {
 
   return (
     <>
-      {actorsList.map((actor: Actor) => (
+      {actorsList.map((actor: Actor, index: number) => (
         <Card key={actor.id}>
             <TitleWrapper>
                 <H3> {actor.name} </H3>
-                <Age> 59 </Age>
+                <Age> {returnAge(actorsBirthdays[index])} </Age>
             </TitleWrapper>
         </Card>
       ))}
