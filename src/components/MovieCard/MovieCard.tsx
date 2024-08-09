@@ -3,12 +3,20 @@ import BtnWatchTrailer from "../Buttons/BtnWatchTrailer";
 import Rating from "../MovieInfo/Ratings/Rating";
 import { Card } from "./styles";
 
-const MovieCard = () => {
+interface CardProps {
+  rating: number
+  title: string
+  imageURL: string
+}
+
+const MovieCard = ({ rating, title, imageURL }: CardProps) => {
+  const movieImage = `${import.meta.env.VITE_IMAGE_BASE_URL}w200`;
+
   return (
-    <Card>
-      <Rating rating={5.2} backgroundColor={true}/>
+    <Card imageURL={`${movieImage}${imageURL}`}>
+      <Rating rating={rating} backgroundColor={true}/>
       <MovieInfoWrapper>
-        <H3> Divertidamente </H3>
+        <H3> {title} </H3>
         <BtnWatchTrailer/>
       </MovieInfoWrapper>
       <Overlay/>
