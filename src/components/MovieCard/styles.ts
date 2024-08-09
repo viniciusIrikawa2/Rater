@@ -4,7 +4,7 @@ export const Card = styled.div`
     width: 339px;
     height: 253.67px;
     border-radius: 24px;
-    margin: 2% 1% 2% 0;
+    margin: 0% 1% 2% 0%;
     padding: 12px;
     background-image: url('/images/img.png');
     background-size: cover;

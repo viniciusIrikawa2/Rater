@@ -5,6 +5,7 @@ export const H2 = styled.h2`
     font-family: system-ui;
     display: flex;
     align-items: center;
+    margin-bottom: 1.5%;
 
     &:before {
         content: '';
