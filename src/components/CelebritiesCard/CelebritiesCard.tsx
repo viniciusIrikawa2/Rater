@@ -7,7 +7,7 @@ import { returnAge } from "../../functions/helpers";
 const CelebritiesCard = () => {
   const [actorsList, setActorList] = useState<Actor[]>([]);
   const [actorsBirthdays, setActorsBirthdays] = useState<any[]>([]);
-
+  const actorImage = `${import.meta.env.VITE_IMAGE_BASE_URL}w500`;
 
   const fetchActors = async () => {
     try {
@@ -34,7 +34,7 @@ const CelebritiesCard = () => {
   return (
     <>
       {actorsList.map((actor: Actor, index: number) => (
-        <Card key={actor.id}>
+        <Card key={actor.id} imageUrl={`${actorImage}${actor.profile_path}`}>
             <TitleWrapper>
                 <H3> {actor.name} </H3>
                 <Age> {returnAge(actorsBirthdays[index])} </Age>

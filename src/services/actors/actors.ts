@@ -5,7 +5,7 @@ export const getActors = async () => {
         const response = await BASEURL.get('/person/popular');
         return response;
     } catch (error) {
-        console.log(error);
+        throw new Error('Erro na requisição');
     }
 };
 
@@ -14,7 +14,7 @@ export const getActorDetails = async (actorId: number) => {
         const response = await BASEURL.get(`/person/${actorId}`);
         return response.data;
     } catch (error) {
-        console.log(error);
+        throw new Error('Erro na requisição');
     }
 };
 
