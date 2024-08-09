@@ -1,22 +1,20 @@
 import styled from "styled-components";
 
-export const RatingWrapper = styled.div`
+export const RatingWrapper = styled.div<{backgroundColor: boolean}>`
     width: 59px;
     height: 32px;
     border-radius: 12px;
     padding: 4px;
     color: #EEEEEE;
     backdrop-filter: blur(12px);
-    background-color: #EEEEEE40;
+    background-color: ${props => props.backgroundColor ? '#EEEEEE40' : 'transparent'};
     font-weight: 600;
     font-size: 20px;
     font-family: system-ui;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 10%;
-    left: 5%; 
+    position: relative;
     z-index: 10;
 `;
 

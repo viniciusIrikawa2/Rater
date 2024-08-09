@@ -3,11 +3,13 @@ import { getNowPlayingMovies } from "../../services/movies/movies"
 import { H1, MovieInfoWrapper, Overlay } from "../../styles.utils/styles"
 import BtnWatchTrailer from "../Buttons/BtnWatchTrailer"
 import FeatureLabel from "../Labels/FeatureLabel"
-import { Card, P } from './styles'
+import { Card, P, Wrapper } from './styles'
 import { Movie } from "../@Types/movies"
+import Rating from "../Ratings/Rating"
 
 const FeaturedCard = () => {
   const [featuredMovie, setFeaturedMovie] = useState<Movie>();
+  const movieImage = `${import.meta.env.VITE_IMAGE_BASE_URL}w500`;
 
   const fetchNowPlayingMovies = async () => {
     try {
@@ -23,11 +25,14 @@ const FeaturedCard = () => {
   }, [])
 
   return (
-    <Card>
+    <Card imageUrl={`${movieImage}${featuredMovie?.poster_path}`}>
         <MovieInfoWrapper>
            <FeatureLabel/>
-            <H1> Deadpool & Wolverine </H1>
-            <P>Deadpool recebe uma oferta da Autoridade de Variância Temporal para se juntar ao Universo Cinematográfico Marvel, mas em vez disso recruta uma variante do Wolverine para salvar seu universo da extinção.</P>
+            <H1> {featuredMovie?.original_title} </H1>
+            <Wrapper>
+              <Rating backgroundColor={false}/>
+            </Wrapper>
+            <P>{featuredMovie?.overview}</P>
             <BtnWatchTrailer/>
         </MovieInfoWrapper>
         <Overlay/>

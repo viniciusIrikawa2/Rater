@@ -1,8 +1,12 @@
 import { IconStar, RatingWrapper } from "./styles";
 
-const Rating = () => {
+interface IBackgroundColorProps {
+  backgroundColor: boolean
+}
+
+const Rating = ({ backgroundColor }: IBackgroundColorProps) => {
   return (
-    <RatingWrapper>
+    <RatingWrapper backgroundColor={backgroundColor}>
         <IconStar src="/icons/star.png" alt="starIcon"/>
         <span> 8.1</span>
     </RatingWrapper>

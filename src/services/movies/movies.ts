@@ -7,7 +7,7 @@ interface NowPlayingResponse {
 
 export const getNowPlayingMovies = async (): Promise<Movie[]> => {
     try {
-        const response = await BASEURL.get<NowPlayingResponse>('/movie/now_playing');
+        const response = await BASEURL.get<NowPlayingResponse>('/movie/now_playing?language=pt-BR');
         return response.data.results; 
     } catch (error) {
         throw new Error('Erro na requisição');
