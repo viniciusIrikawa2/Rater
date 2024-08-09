@@ -18,6 +18,7 @@ export const TitleWrapper = styled.div`
     left: 5%; 
     display: flex;
     align-items: center;
+    z-index: 15;
 `;
 
 export const H3 = styled.h3`
