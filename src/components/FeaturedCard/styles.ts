@@ -28,5 +28,5 @@ export const P = styled.p`
 
 export const Span = styled.span`
     color: #B4B4B4;
-    margin-right: 2%;
+    margin-right: 1%;
 `;

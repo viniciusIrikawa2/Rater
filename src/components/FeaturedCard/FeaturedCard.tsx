@@ -1,41 +1,47 @@
-import { useEffect, useState } from "react"
-import { getNowPlayingMovies } from "../../services/movies/movies"
+import { useEffect, useMemo, useState } from "react"
+import { getMovieDetails } from "../../services/movies/movies"
 import { H1, MovieInfoWrapper, Overlay } from "../../styles.utils/styles"
 import BtnWatchTrailer from "../Buttons/BtnWatchTrailer"
 import FeatureLabel from "../Labels/FeatureLabel"
 import { Card, P, Span, Wrapper } from './styles'
-import { Movie } from "../@Types/movies"
+import { MovieDetails } from "../@Types/movies"
 import Rating from "../MovieInfo/Ratings/Rating"
 
 const FeaturedCard = () => {
-  const [featuredMovie, setFeaturedMovie] = useState<Movie>();
+  const [movieDetails, setMovieDetails] = useState<MovieDetails>();
   const movieImage = `${import.meta.env.VITE_IMAGE_BASE_URL}w500`;
-
-  const fetchNowPlayingMovies = async () => {
+  const movieID = 533535;
+  
+  const fetchMovieDetails = async (movieID: number) => {
     try {
-      const response = await getNowPlayingMovies();
-      setFeaturedMovie(response[0]);
+      const response = await getMovieDetails(movieID);
+      setMovieDetails(response);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  useEffect(() => {
-    fetchNowPlayingMovies();
-  }, [])
+  const genres = useMemo(() => {
+    return movieDetails?.genres.map(genre => genre.name).join(', ')
+  }, [movieDetails])
+
+  useEffect(() => {  
+     fetchMovieDetails(movieID);
+  }, []);
 
   return (
-    <Card imageUrl={`${movieImage}${featuredMovie?.poster_path}`}>
+    <Card imageUrl={`${movieImage}${movieDetails?.poster_path}`}>
         <MovieInfoWrapper>
            <FeatureLabel/>
-            <H1> {featuredMovie?.original_title} </H1>
+            <H1> {movieDetails?.title} </H1>
             <Wrapper>
-              <Rating rating={featuredMovie?.vote_average} backgroundColor={false}/> 
-              <Span>| {featuredMovie?.vote_count} </Span>
-              {/* <Span> * Comedy, Action, Adventure, Superhero... * </Span> */}
-              <Span> {featuredMovie?.release_date.substring(0, 4)} </Span>
+              <Rating rating={movieDetails?.vote_average} backgroundColor={false}/> 
+              <Span>| {movieDetails?.vote_count} </Span>
+              <Span> {movieDetails?.runtime} </Span>
+              <Span> • {genres} • </Span>
+              <Span> {movieDetails?.release_date.substring(0, 4)} </Span>
             </Wrapper>
-            <P>{featuredMovie?.overview}</P>
+            <P>{movieDetails?.overview}</P>
             <BtnWatchTrailer/>
         </MovieInfoWrapper>
         <Overlay/>
