@@ -6,11 +6,11 @@ import { returnAge } from "../../functions/helpers";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Overlay } from "../../styles.utils/styles";
+import { actorImage } from "../../constants";
 
 const CelebritiesCard = () => {
   const [actorsList, setActorList] = useState<Actor[]>([]);
   const [actorsBirthdays, setActorsBirthdays] = useState<any[]>([]);
-  const actorImage = `${import.meta.env.VITE_IMAGE_BASE_URL}w500`;
 
   const fetchActors = async () => {
     try {

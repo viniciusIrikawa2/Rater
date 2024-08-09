@@ -7,10 +7,10 @@ import { Card, P, Span, Wrapper } from './styles'
 import { MovieDetails } from "../@Types/movies"
 import Rating from "../MovieInfo/Ratings/Rating"
 import { convertDurationToHours } from "../../functions/helpers"
+import { movieImage } from "../../constants"
 
 const FeaturedCard = () => {
   const [movieDetails, setMovieDetails] = useState<MovieDetails>();
-  const movieImage = `${import.meta.env.VITE_IMAGE_BASE_URL}w500`;
   const movieID = 533535;
   
   const fetchMovieDetails = async (movieID: number) => {
