@@ -13,7 +13,7 @@ interface IMovieProps{
 }
 
 const FeaturedCard = ({ movies }: IMovieProps) => {
-  const movieID = 533534;
+  const movieID = movies.id;  
   const { movieDetails, genres } = useFetchFeaturedMovie(movieID);
 
   return (
@@ -36,4 +36,4 @@ const FeaturedCard = ({ movies }: IMovieProps) => {
   )
 }
 
-export default FeaturedCard
+export default FeaturedCard;
