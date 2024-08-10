@@ -22,3 +22,12 @@ export const getMovieDetails = async (movieID: number): Promise<MovieDetails> =>
         throw new Error('Erro na requisição');
     }
 };
+
+export const getMovieCredits = async (movieID: number) => {
+    try {
+        const response = await BASEURL.get(`movie/${movieID}/credits`);
+        return response.data;
+    } catch (error) {
+        throw new Error('Erro na requisição');
+    }
+};

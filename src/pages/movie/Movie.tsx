@@ -14,9 +14,7 @@ const Movie = () => {
     const { id } = useParams();
     
     const { movieDetails } = useFetchFeaturedMovie(Number(id));
-    console.log(movieDetails);
-
-    // const director = movieDetails?.find(director => )
+    // console.log(movieDetails);
 
     return (
         <>
