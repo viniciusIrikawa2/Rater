@@ -3,7 +3,7 @@ import CelebritiesCard from "../../CelebritiesCard/CelebritiesCard";
 import MovieCard from "../../MovieCard/MovieCard";
 import SectionTitle from "../../Title/SectionTitle";
 import { SectionContainer } from "./styles";
-import useMovieStore from "../../../store/useMovieStore ";
+import { Movie } from "../../@Types/movies";
 
 type Direction = 'row' | 'column';
 type CardType = 'movie' | 'celebrity';
@@ -11,12 +11,11 @@ type CardType = 'movie' | 'celebrity';
 interface ISectionNameProps{
   sectionName: string,
   direction: Direction,
-  cardType: CardType
+  cardType: CardType,
+  movies: Movie[]
 }
 
-const Section = ({ sectionName, direction, cardType }: ISectionNameProps) => {
-  const { movies } = useMovieStore();
-
+const Section = ({ sectionName, direction, cardType, movies }: ISectionNameProps) => {
   return (
     <SectionContainer>
         <SectionTitle text={sectionName}/>
