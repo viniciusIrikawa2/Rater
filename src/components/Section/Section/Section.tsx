@@ -3,7 +3,7 @@ import CelebritiesCard from "../../CelebritiesCard/CelebritiesCard";
 import MovieCard from "../../MovieCard/MovieCard";
 import SectionTitle from "../../Title/SectionTitle";
 import { SectionContainer } from "./styles";
-import useFetchNowPlayingMovies from "../../../hooks/useFetchNowPlayingMovies";
+import useMovieStore from "../../../store/useMovieStore ";
 
 type Direction = 'row' | 'column';
 type CardType = 'movie' | 'celebrity';
@@ -15,7 +15,7 @@ interface ISectionNameProps{
 }
 
 const Section = ({ sectionName, direction, cardType }: ISectionNameProps) => {
-  const { movies } = useFetchNowPlayingMovies();
+  const { movies } = useMovieStore();
 
   return (
     <SectionContainer>

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { Movie } from "../components/@Types/movies";
+import { useEffect } from "react";
 import { getNowPlayingMovies } from "../services/movies/movies";
+import useMovieStore from "../store/useMovieStore ";
 
 const useFetchNowPlayingMovies = () => {
-    const [movies, setMovies] = useState<Movie[]>();
+    const {setMovies} = useMovieStore();
 
     const fetchMovies = async () => {
       try {
@@ -17,8 +17,6 @@ const useFetchNowPlayingMovies = () => {
     useEffect(() => {
       fetchMovies();
     }, []);
-  
-    return {movies};
 };
 
 export default useFetchNowPlayingMovies;
