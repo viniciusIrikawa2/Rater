@@ -17,6 +17,13 @@ export const H3 = styled.h3`
     margin: 0px 0px 10px 0px;
 `;
 
+export const H4 = styled.h4`
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19.2px;'
+`;
+
 export const Overlay = styled.div`
     background-color: #00000080;
     width: 100%;

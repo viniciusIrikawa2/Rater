@@ -22,7 +22,8 @@ export const P = styled.p`
     font-size: 16px;
     line-height: 22.4px;
     color: #EEEEEE;
-    margin: 0% 0px 2% 0px;
+    margin: 1% 0px 2% 0px;
+    width: 80%;
 `;
 
 export const Span = styled.span`

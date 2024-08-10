@@ -10,3 +10,22 @@ export const BannerSection = styled.section<{ backgroundImg: string }>`
     position: relative;
     margin-bottom: 1%;
 `;
+
+export const MovieInfoSection = styled.section`
+    margin-top: 3%;
+    display: flex;
+`;
+
+export const Wrapper = styled.div<{ width: string}>`
+    border: 2px solid red;
+    width: ${props => props.width};
+`;
+    
+export const WrapperTitle = styled.div`
+    display: flex;
+    align-items: center
+`;
+
+export const Span = styled.span`
+    color: #B4B4B4;
+`;
