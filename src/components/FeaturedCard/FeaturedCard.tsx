@@ -1,34 +1,14 @@
-import { useEffect, useMemo, useState } from "react"
-import { getMovieDetails } from "../../services/movies/movies"
 import { H1, MovieInfoWrapper, Overlay } from "../../styles.utils/styles"
 import BtnWatchTrailer from "../Buttons/BtnWatchTrailer"
 import FeatureLabel from "../Labels/FeatureLabel"
 import { Card, P, Span, Wrapper } from './styles'
-import { MovieDetails } from "../@Types/movies"
 import Rating from "../MovieInfo/Ratings/Rating"
 import { convertDurationToHours } from "../../functions/helpers"
 import { movieImage } from "../../constants"
+import useFetchFeaturedMovie from "../../hooks/useFetchFeaturedMovie"
 
 const FeaturedCard = () => {
-  const [movieDetails, setMovieDetails] = useState<MovieDetails>();
-  const movieID = 533535;
-  
-  const fetchMovieDetails = async (movieID: number) => {
-    try {
-      const response = await getMovieDetails(movieID);
-      setMovieDetails(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const genres = useMemo(() => {
-    return movieDetails?.genres.map(genre => genre.name).join(', ')
-  }, [movieDetails])
-
-  useEffect(() => {  
-     fetchMovieDetails(movieID);
-  }, []);
+  const { movieDetails, genres } = useFetchFeaturedMovie();
 
   return (
     <Card imageUrl={`${movieImage}${movieDetails?.poster_path}`}>
