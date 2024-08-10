@@ -16,7 +16,7 @@ const MovieCard = ({ rating, title, imageURL }: CardProps) => {
       <Rating rating={rating} backgroundColor={true}/>
       <MovieInfoWrapper>
         <H3> {title} </H3>
-        <BtnWatchTrailer/>
+        <BtnWatchTrailer url="/"/>
       </MovieInfoWrapper>
       <Overlay/>
     </Card>

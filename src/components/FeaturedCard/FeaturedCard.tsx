@@ -1,6 +1,6 @@
 import { H1, MovieInfoWrapper, Overlay } from "../../styles.utils/styles"
 import BtnWatchTrailer from "../Buttons/BtnWatchTrailer"
-import FeatureLabel from "../Labels/FeatureLabel"
+import FeatureLabel from "../Labels/FeaturedLabel/FeatureLabel"
 import { Card, P, Span, Wrapper } from './styles'
 import Rating from "../MovieInfo/Ratings/Rating"
 import { convertDurationToHours } from "../../functions/helpers"

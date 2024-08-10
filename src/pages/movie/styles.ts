@@ -7,4 +7,6 @@ export const BannerSection = styled.section<{ backgroundImg: string }>`
     background-image: url(${props => props.backgroundImg});
     display: flex;
     align-items: end;
+    position: relative;
+    margin-bottom: 1%;
 `;
