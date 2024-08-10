@@ -16,6 +16,8 @@ export const Button = styled.a`
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
+    z-index: 15;
 `;
 
 export const IconPlay = styled.img`

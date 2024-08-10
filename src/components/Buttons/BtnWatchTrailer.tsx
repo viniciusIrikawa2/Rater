@@ -1,8 +1,12 @@
 import { Button, IconPlay } from "./styles";
 
-const BtnWatchTrailer = () => {
+interface ILinkProps{
+  url: string,
+}
+
+const BtnWatchTrailer = ({ url }: ILinkProps) => {
   return (
-    <Button href="/">
+    <Button href={url}>
       Assistir ao trailer
       <IconPlay src="/icons/play.png" alt='playIcon'/>
     </Button>

@@ -29,7 +29,7 @@ const FeaturedCard = ({ movies }: IMovieProps) => {
               <Span> {movies?.release_date.substring(0, 4)} </Span>
             </Wrapper>
             <P>{movies?.overview}</P>
-            <BtnWatchTrailer/>
+            <BtnWatchTrailer url={`/movie/${movieID}`}/>
         </MovieInfoWrapper>
         <Overlay/>
     </Card>
