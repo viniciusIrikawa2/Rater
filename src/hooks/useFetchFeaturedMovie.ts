@@ -2,10 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import { MovieDetails } from "../components/@Types/movies";
 import { getMovieDetails } from "../services/movies/movies";
 
-const useFetchFeaturedMovie = () => {
+const useFetchFeaturedMovie = (movieID: number) => {
     const [movieDetails, setMovieDetails] = useState<MovieDetails>();
-    const movieID = 533535;
-    
+
     const fetchMovieDetails = async (movieID: number) => {
       try {
         const response = await getMovieDetails(movieID);

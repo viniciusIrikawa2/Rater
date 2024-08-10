@@ -10,7 +10,11 @@ const MainSection = () => {
   return (
     <MainContainer>
         <MainFeaturedWrapper>
-            <FeaturedCard/>
+        {movies.length > 0 ? (
+          <FeaturedCard movies={movies[0]} />
+        ) : (
+          <p>Erro ao carregar o filme</p> // Mensagem ou loading enquanto espera os filmes
+        )}
         </MainFeaturedWrapper>
 
         <SecondaryFeaturedWrapper>

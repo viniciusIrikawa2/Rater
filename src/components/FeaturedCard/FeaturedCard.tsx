@@ -6,23 +6,29 @@ import Rating from "../MovieInfo/Ratings/Rating"
 import { convertDurationToHours } from "../../functions/helpers"
 import { movieImage } from "../../constants"
 import useFetchFeaturedMovie from "../../hooks/useFetchFeaturedMovie"
+import { Movie } from "../@Types/movies"
 
-const FeaturedCard = () => {
-  const { movieDetails, genres } = useFetchFeaturedMovie();
+interface IMovieProps{
+  movies: Movie
+}
+
+const FeaturedCard = ({ movies }: IMovieProps) => {
+  const movieID = 533534;
+  const { movieDetails, genres } = useFetchFeaturedMovie(movieID);
 
   return (
-    <Card imageUrl={`${movieImage}${movieDetails?.poster_path}`}>
+    <Card imageUrl={`${movieImage}${movies.poster_path}`}>
         <MovieInfoWrapper>
            <FeatureLabel/>
-            <H1> {movieDetails?.title} </H1>
+            <H1> {movies?.title} </H1>
             <Wrapper>
-              <Rating rating={movieDetails?.vote_average} backgroundColor={false}/> 
-              <Span>| {movieDetails?.vote_count} </Span>
+              <Rating rating={movies?.vote_average} backgroundColor={false}/> 
+              <Span>| {movies?.vote_count} </Span>
               <Span> {convertDurationToHours(movieDetails?.runtime!)} </Span>
               <Span> • {genres} • </Span>
-              <Span> {movieDetails?.release_date.substring(0, 4)} </Span>
+              <Span> {movies?.release_date.substring(0, 4)} </Span>
             </Wrapper>
-            <P>{movieDetails?.overview}</P>
+            <P>{movies?.overview}</P>
             <BtnWatchTrailer/>
         </MovieInfoWrapper>
         <Overlay/>
