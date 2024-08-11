@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Age, Card, H3, TitleWrapper } from "./styles";
 import { getActorDetails, getActors } from "../../services/actors/actors";
-import { Actor } from "../@Types/actors";
+import { Actor } from "../../@Types/actors";
 import { returnAge } from "../../functions/helpers";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';

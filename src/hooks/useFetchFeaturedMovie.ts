@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { MovieDetails } from "../components/@Types/movies";
+import { MovieDetails } from "../@Types/movies";
 import { getMovieDetails } from "../services/movies/movies";
 
 const useFetchFeaturedMovie = (movieID: number) => {

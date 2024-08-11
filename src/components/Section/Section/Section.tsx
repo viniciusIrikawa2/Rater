@@ -3,7 +3,7 @@ import CelebritiesCard from "../../CelebritiesCard/CelebritiesCard";
 import MovieCard from "../../MovieCard/MovieCard";
 import SectionTitle from "../../Title/SectionTitle";
 import { SectionContainer } from "./styles";
-import { Movie } from "../../@Types/movies";
+import { Movie } from "../../../@Types/movies";
 
 type Direction = 'row' | 'column';
 type CardType = 'movie' | 'celebrity';

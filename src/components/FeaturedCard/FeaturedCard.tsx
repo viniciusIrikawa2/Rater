@@ -6,7 +6,7 @@ import Rating from "../MovieInfo/Ratings/Rating"
 import { convertDurationToHours } from "../../functions/helpers"
 import { movieImage } from "../../constants"
 import useFetchFeaturedMovie from "../../hooks/useFetchFeaturedMovie"
-import { Movie } from "../@Types/movies"
+import { Movie } from "../../@Types/movies"
 
 interface IMovieProps{
   movies: Movie

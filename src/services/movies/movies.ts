@@ -1,4 +1,4 @@
-import { Movie, MovieDetails } from "../../components/@Types/movies";
+import { Movie, MovieDetails } from "../../@Types/movies";
 import { BASEURL } from "../axiosBaseUrl"
 
 interface NowPlayingResponse {
@@ -25,7 +25,7 @@ export const getMovieDetails = async (movieID: number): Promise<MovieDetails> =>
 
 export const getMovieCredits = async (movieID: number) => {
     try {
-        const response = await BASEURL.get(`movie/${movieID}/credits`);
+        const response = await BASEURL.get(`movie/${movieID}/credits?language=enpt-BR`);
         return response.data;
     } catch (error) {
         throw new Error('Erro na requisição');

@@ -12,9 +12,7 @@ import Cast from "../../components/Cast/Cast";
 
 const Movie = () => {
     const { id } = useParams();
-    
     const { movieDetails } = useFetchFeaturedMovie(Number(id));
-    // console.log(movieDetails);
 
     return (
         <>
