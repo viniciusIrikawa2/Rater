@@ -3,7 +3,7 @@ import { BASEURL } from "../axiosBaseUrl";
 export const getActors = async () => {
     try {
         const response = await BASEURL.get('/person/popular');
-        return response;
+       return response.data.results;
     } catch (error) {
         throw new Error('Erro na requisição');
     }

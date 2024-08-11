@@ -4,51 +4,28 @@ import { getActorDetails, getActors } from "../services/actors/actors";
 import { Cast } from "../@Types/credits";
 
 const useFetchCelebrities = (movieCast?: Cast[]) => {
-    const [celebrities, setCelebrities] = useState<Cast[]>([]);
-    const [actorsBirthdays, setActorsBirthdays] = useState<string[]>([]);
+    const [celebrities, setCelebrities] = useState<Actor[] | Cast[]>([]);
+    const [celebritiesBirthdays, setCelebritiesBirthdays] = useState<string[]>([]);
 
-    const fetchCelebrities = async () => {
+    const fetchCelebritiesOrMovieCast = async () => {
       try {
-        const actorsResponse = await getActors();
-        if(actorsResponse?.status === 200){ 
-            setCelebrities(actorsResponse.data.results);
-          
-          const detailsPromise = actorsResponse.data.results.map((actor: Actor) => 
-            getActorDetails(actor.id)
-          );
+          const celebrities = movieCast || await getActors();
+          setCelebrities(celebrities);
+
+          const detailsPromise = celebrities.map((celebrity: Actor | Cast) => getActorDetails(celebrity.id));
           const detailsResponse = await Promise.all(detailsPromise);
           const details = detailsResponse.map(response => response.birthday);
-          setActorsBirthdays(details);
-        }
+          setCelebritiesBirthdays(details);
       } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const fetchCast = async () => {
-        try {
-            if (movieCast) {
-                setCelebrities(movieCast);
-                const detailsPromise = movieCast.map((actor: Cast) => getActorDetails(actor.id));
-                const detailsResponse = await Promise.all(detailsPromise);
-                const details = detailsResponse.map(response => response.birthday);
-                setActorsBirthdays(details);
-              }
-        } catch (error) {
           console.log(error);
-        }
-      };
-  
-    useEffect(() => {
-        if(movieCast){
-            fetchCast();
-        }else{
-            fetchCelebrities();
-        }
-    }, [movieCast]);
+      }
+  };
 
-    return { celebrities, actorsBirthdays };
+  useEffect(() => {
+      fetchCelebritiesOrMovieCast();
+  }, [movieCast]);
 
+  return { celebrities, celebritiesBirthdays };
 };
 
 export default useFetchCelebrities;

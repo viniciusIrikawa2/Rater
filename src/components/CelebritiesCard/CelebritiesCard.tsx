@@ -6,22 +6,23 @@ import { Overlay } from "../../styles.utils/styles";
 import { actorImage } from "../../constants";
 import useFetchCelebrities from "../../hooks/useFetchCelebrities";
 import { Cast } from "../../@Types/credits";
+import { Actor } from "../../@Types/actors";
 interface MovieCastProps {
   movieCast?: Cast[]
 }
 
 const CelebritiesCard = ({ movieCast }: MovieCastProps) => {
-  const { celebrities, actorsBirthdays } = useFetchCelebrities(movieCast);
+  const { celebrities, celebritiesBirthdays } = useFetchCelebrities(movieCast);
   
   return (
     <>
       <Swiper slidesPerView={5.5} spaceBetween={10}> 
-        {celebrities.map((actor: Cast, index: number) => (
+        {celebrities.map((actor: Cast | Actor, index: number) => (
           <SwiperSlide key={actor.id}>
             <Card imageUrl={`${actorImage}${actor.profile_path}`}>
                 <TitleWrapper>
                     <H3> {actor.name} </H3>
-                    <Age> {returnAge(actorsBirthdays[index])} </Age>
+                    <Age> {returnAge(celebritiesBirthdays[index])} </Age>
                 </TitleWrapper>
                 <Overlay/>
             </Card>
