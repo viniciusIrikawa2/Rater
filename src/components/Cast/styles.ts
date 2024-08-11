@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const CastWrapper = styled.div`
-    border: 2px solid red;
+    margin-bottom: 3%;
+    border-left: 4px solid white;
+    padding-left: 2%;
 `;
 
 export const Span = styled.span`

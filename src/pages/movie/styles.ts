@@ -17,7 +17,6 @@ export const MovieInfoSection = styled.section`
 `;
 
 export const Wrapper = styled.div<{ width: string}>`
-    border: 2px solid red;
     width: ${props => props.width};
 `;
     

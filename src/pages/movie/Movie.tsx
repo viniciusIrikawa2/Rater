@@ -9,11 +9,16 @@ import Rating from "../../components/MovieInfo/Ratings/Rating";
 import { convertDurationToHours } from "../../functions/helpers";
 import { P } from "../../components/FeaturedCard/styles";
 import Cast from "../../components/Cast/Cast";
+import useFetchMovieCredits from "../../hooks/useFetchMovieCredits";
 
 const Movie = () => {
     const { id } = useParams();
     const { movieDetails } = useFetchFeaturedMovie(Number(id));
-
+    const { director, writers, actors } = useFetchMovieCredits(Number(id));
+    
+    const writersNames = writers?.map(writer => writer.name).join(', ');
+    const actorsNames = actors?.map(actor => actor.name).join(', ');  
+   
     return (
         <>
             <BannerSection backgroundImg={`${movieImage}/${movieDetails?.poster_path}`}>
@@ -22,7 +27,7 @@ const Movie = () => {
             </BannerSection>
             <div>
                 {movieDetails?.genres.map(genre => (
-                    <Genre genre={genre.name}/>
+                    <Genre genre={genre.name} key={genre.id}/>
                 ))}
             </div>
             <MovieInfoSection>
@@ -37,8 +42,10 @@ const Movie = () => {
                     </Span>
                     <P>{movieDetails?.overview}</P>
                 </Wrapper>
-                <Wrapper width='40%'>
-                    {/* <Cast castType={}> */}
+                <Wrapper width='30%'>
+                    <Cast role='Direção' name={director?.name}/>
+                    <Cast role='Roteiristas' name={writersNames}/>
+                    <Cast role='Artistas' name={actorsNames}/>
                 </Wrapper>
             </MovieInfoSection>
         </>
