@@ -10,15 +10,19 @@ import { convertDurationToHours } from "../../functions/helpers";
 import { P } from "../../components/FeaturedCard/styles";
 import Cast from "../../components/Cast/Cast";
 import useFetchMovieCredits from "../../hooks/useFetchMovieCredits";
+import Section from "../../components/Section/Section/Section";
 
 const Movie = () => {
     const { id } = useParams();
     const { movieDetails } = useFetchFeaturedMovie(Number(id));
     const { director, writers, actors } = useFetchMovieCredits(Number(id));
-    
-    const writersNames = writers?.map(writer => writer.name).join(', ');
-    const actorsNames = actors?.map(actor => actor.name).join(', ');  
-   
+
+    const mainWriters = writers?.slice(0,4); 
+    const mainActors = actors?.slice(0,4);
+
+    const writersNames = mainWriters?.map(writer => writer.name).join(', ');
+    const actorsNames = mainActors?.map(actor => actor.name).join(', ');
+
     return (
         <>
             <BannerSection backgroundImg={`${movieImage}/${movieDetails?.poster_path}`}>
@@ -48,6 +52,7 @@ const Movie = () => {
                     <Cast role='Artistas' name={actorsNames}/>
                 </Wrapper>
             </MovieInfoSection>
+            <Section sectionName='Elenco principal' direction="row" cardType="celebrity" movieCast={actors}/>
         </>
     )
 }

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getMovieCredits } from "../services/movies/movies";
-import { Credits } from "../@Types/credits";
+import useMovieCreditsStore from "../store/useMovieCreditsStore";
 
 const useFetchMovieCredits = ( movieID: number ) => {
-    const [credits, setCredits] = useState<Credits>();
+    const { credits, setCredits } = useMovieCreditsStore();
 
     const fetchCredits = async () => {
         try {
@@ -15,8 +15,8 @@ const useFetchMovieCredits = ( movieID: number ) => {
     }
 
     const director = credits?.crew.find((item) => item.known_for_department === 'Directing');
-    const writers = credits?.crew.filter((item) => item.known_for_department === 'Writing').slice(0,4);
-    const actors = credits?.cast.map((item) => item).slice(0, 4);
+    const writers = credits?.crew.filter((item) => item.known_for_department === 'Writing');
+    const actors = credits?.cast.map((item) => item);
     
     useEffect(() => {
         fetchCredits();

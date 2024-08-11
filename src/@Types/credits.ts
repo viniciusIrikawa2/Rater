@@ -4,7 +4,7 @@ export interface Credits {
     id: number
 }
 
-interface Cast {
+export interface Cast {
     adult: boolean;
     gender: number;
     id: number;
@@ -19,7 +19,7 @@ interface Cast {
     order: number;
 }
 
-interface Crew {
+export interface Crew {
     adult: boolean;
     gender: number;
     id: number;

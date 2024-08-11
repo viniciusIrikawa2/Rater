@@ -4,6 +4,7 @@ import MovieCard from "../../MovieCard/MovieCard";
 import SectionTitle from "../../Title/SectionTitle";
 import { SectionContainer } from "./styles";
 import { Movie } from "../../../@Types/movies";
+import { Cast } from "../../../@Types/credits";
 
 type Direction = 'row' | 'column';
 type CardType = 'movie' | 'celebrity';
@@ -12,10 +13,11 @@ interface ISectionNameProps{
   sectionName: string,
   direction: Direction,
   cardType: CardType,
-  movies: Movie[]
+  movies?: Movie[],
+  movieCast?: Cast[]
 }
 
-const Section = ({ sectionName, direction, cardType, movies }: ISectionNameProps) => {
+const Section = ({ sectionName, direction, cardType, movies, movieCast }: ISectionNameProps) => {
   return (
     <SectionContainer>
         <SectionTitle text={sectionName}/>
@@ -27,7 +29,7 @@ const Section = ({ sectionName, direction, cardType, movies }: ISectionNameProps
               ))}
             </>
           ) : (
-            <CelebritiesCard/>
+            <CelebritiesCard movieCast={movieCast}/>
           )}
         </CardListWrapper>
     </SectionContainer>
