@@ -1,4 +1,4 @@
-import { Age, Card, H3, TitleWrapper } from "./styles";
+import { Age, Card, Character, H3, TitleWrapper, Wrapper } from "./styles";
 import { returnAge } from "../../functions/helpers";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -13,18 +13,24 @@ interface MovieCastProps {
 
 const CelebritiesCard = ({ movieCast }: MovieCastProps) => {
   const { celebrities, celebritiesBirthdays } = useFetchCelebrities(movieCast);
-  
+  console.log(celebrities);
+
   return (
     <>
       <Swiper slidesPerView={5.5} spaceBetween={10}> 
         {celebrities.map((actor: Cast | Actor, index: number) => (
           <SwiperSlide key={actor.id}>
             <Card imageUrl={`${actorImage}${actor.profile_path}`}>
+              <Wrapper>
                 <TitleWrapper>
-                    <H3> {actor.name} </H3>
-                    <Age> {returnAge(celebritiesBirthdays[index])} </Age>
+                  <H3> {actor.name} </H3>
+                  <Age> {returnAge(celebritiesBirthdays[index])} </Age>
                 </TitleWrapper>
-                <Overlay/>
+                {movieCast && (
+                  <Character> {(actor as Cast)?.character?.split(' / ')[0]} </Character>
+                )}
+              </Wrapper>
+              <Overlay/>
             </Card>
           </SwiperSlide>
         ))}

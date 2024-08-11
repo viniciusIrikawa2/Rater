@@ -13,13 +13,16 @@ export const Card = styled.div<{ imageUrl: string }>`
     position: relative;
 `;
 
-export const TitleWrapper = styled.div`
+export const Wrapper = styled.div`
     position: absolute;
     bottom: 10%;
-    left: 5%; 
+    left: 5%;
+    z-index: 15;
+`;
+
+export const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
-    z-index: 15;
 `;
 
 export const H3 = styled.h3`
@@ -36,4 +39,12 @@ export const Age = styled.span`
     font-size: 14px;
     line-height: 22.4px;
     margin-left: 5px;
+`;
+
+export const Character = styled.span`
+    color: #B4B4B4;
+    font-weight: 400
+    font-family: system-ui;
+    font-size: 20px;
+    line-height: 22.4px;
 `;
