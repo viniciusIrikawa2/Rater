@@ -1,5 +1,16 @@
 import { useMemo, useState } from "react";
-import { Image, Input, InputWrapper, MovieInfo, MovieTitle, ResultItem, SearchResultsWrapper, Year } from "./styles";
+import { 
+  FilterButton, 
+  FilterWrapper, 
+  Image, 
+  Input, 
+  InputWrapper, 
+  MovieInfo, 
+  MovieTitle, 
+  ResultItem, 
+  SearchResultsWrapper, 
+  Year
+ } from "./styles";
 import useMovieStore from "../../store/useMovieStore ";
 import { Movie } from "../../@Types/movies";
 import { movieImage } from "../../constants";
@@ -8,6 +19,7 @@ import Rating from "../MovieInfo/Ratings/Rating";
 
 const FilterBar = () => {
   const [search, setSearch] = useState<string>('');
+  const [filterIsOpen, setFilterIsOpen] = useState<boolean>(false);
   const {movies} = useMovieStore();
   const navigate = useNavigate();
 
@@ -29,6 +41,10 @@ const FilterBar = () => {
                onChange={(evt) => handleChange(evt.target.value)} 
                onBlur={handleBlur}
                value={search}/>
+        <FilterButton onClick={() => setFilterIsOpen(!filterIsOpen)}
+                      onBlur={() => setFilterIsOpen(false)}> 
+          <img src="/icons/filter.png"/>
+        </FilterButton>
         {search.length !== 0 && (
           <SearchResultsWrapper>
             <small>Resultados: {filteredMovies.length} </small>
@@ -43,6 +59,11 @@ const FilterBar = () => {
               </ResultItem>
             ))}
           </SearchResultsWrapper>
+        )}
+        {filterIsOpen && (
+          <FilterWrapper>
+             <small> Gêneros cinematográficos </small>
+          </FilterWrapper>
         )}
     </InputWrapper>
   )

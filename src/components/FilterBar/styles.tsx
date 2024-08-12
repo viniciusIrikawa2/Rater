@@ -6,6 +6,8 @@ export const InputWrapper = styled.div`
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
+    display: flex;
+    align-items: center;
 `;
 
 export const Input = styled.input`
@@ -18,7 +20,20 @@ export const Input = styled.input`
     height: 48px;
 `;
 
+export const FilterButton = styled.button`
+    background-color: #313131;
+    border: none;
+    border-radius: 99px;
+    width: 48px;
+    height: 48px;
+    margin-left: 3%;
+    cursor: pointer;
+`;
+
 export const SearchResultsWrapper = styled.div`
+    position: absolute;
+    top: 100%;
+    left: 0;
     border-radius: 24px;
     background-color: #191919;
     padding: 12px;
@@ -27,12 +42,14 @@ export const SearchResultsWrapper = styled.div`
 `;
 
 export const ResultItem = styled.div`
+
     display: flex;
     margin: 2% 0%;
     cursor: pointer;
     border-radius: 16px;
     padding: 4px;
     transition: .3s;
+    z=index: 25;
 
     &:hover{
         background-color: #232323;
@@ -64,4 +81,16 @@ export const Year = styled.span`
     font-weight: 500;
     font-size: 13px;
     line-height: 12px;
+`;
+
+export const FilterWrapper = styled.div`
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 24px;
+    background-color: #191919;
+    padding: 12px;
+    color: #fff;
+    margin-top: 2%;
 `;
