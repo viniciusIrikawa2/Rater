@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Button, IconPlay } from "./styles";
 
 interface ILinkProps{
@@ -5,8 +6,10 @@ interface ILinkProps{
 }
 
 const BtnWatchTrailer = ({ url }: ILinkProps) => {
+  const navigate = useNavigate();
+
   return (
-    <Button href={url}>
+    <Button onClick={() => navigate(`${url}`)}>
       Assistir ao trailer
       <IconPlay src="/icons/play.png" alt='playIcon'/>
     </Button>
