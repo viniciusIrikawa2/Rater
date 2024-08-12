@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <MainSection/>
-      <Section sectionName='Últimos lançamentos' direction="row" cardType="movie" movies={movies}/>
+      <Section sectionName='Últimos lançamentos' direction="row" cardType="movie" movies={movies.slice(4, movies.length)}/>
       <Section sectionName='Recomendados' direction="row" cardType="movie" movies={movies}/>
       <Section sectionName='Celebridades' direction="row" cardType="celebrity" movies={movies}/>
     </>

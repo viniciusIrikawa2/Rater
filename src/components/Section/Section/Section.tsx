@@ -5,6 +5,7 @@ import SectionTitle from "../../Title/SectionTitle";
 import { SectionContainer } from "./styles";
 import { Movie } from "../../../@Types/movies";
 import { Cast } from "../../../@Types/credits";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 type Direction = 'row' | 'column';
 type CardType = 'movie' | 'celebrity';
@@ -23,11 +24,13 @@ const Section = ({ sectionName, direction, cardType, movies, movieCast }: ISecti
         <SectionTitle text={sectionName}/>
         <CardListWrapper direction={direction}>
           {cardType === 'movie' ? (
-            <>
-              {movies?.map(item => (
-                <MovieCard key={item.id} rating={item.vote_average} title={item.title} imageURL={item.poster_path} movieId={item.id}/>
-              ))}
-            </>
+              <Swiper slidesPerView={4} spaceBetween={10}>
+                {movies?.map(item => (
+                  <SwiperSlide key={item.id}>
+                    <MovieCard key={item.id} rating={item.vote_average} title={item.title} imageURL={item.poster_path} movieId={item.id}/>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
           ) : (
             <CelebritiesCard movieCast={movieCast}/>
           )}

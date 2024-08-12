@@ -45,4 +45,5 @@ export const CardListWrapper = styled.div<CardListWrapperProps>`
     display: flex;
     align-items: center;
     flex-direction: ${props => props.direction || 'row'};
+    gap: 35px;
 `;
