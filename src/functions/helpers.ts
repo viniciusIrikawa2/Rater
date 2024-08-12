@@ -1,3 +1,5 @@
+import { months } from "../constants";
+
 export const returnAge = (birthday: string) => {
     const birthDate = new Date(birthday);
     const dateNow = new Date();
@@ -16,3 +18,13 @@ export const convertDurationToHours = (time: number): string => {
     const minutes = time % 60;
     return `${hours}h ${minutes}m`;
 };
+
+export const normalizeBirthDate = (birthDate: string) => {
+    const date = new Date(birthDate);
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    const normalizedBirthDate = `${day} de ${months[month]} de ${year} (${returnAge(birthDate)} anos)`;
+    return normalizedBirthDate;
+}

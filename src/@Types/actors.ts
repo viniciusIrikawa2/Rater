@@ -1,15 +1,21 @@
 export interface Actor {
     adult: boolean;
-    gender: number;
+    also_known_as: string[];
+    biography: string;
+    birthday: string;
+    deathday: string | null; 
+    gender: number; 
+    homepage: string | null;
     id: number;
+    imdb_id: string;
     known_for_department: string;
     name: string;
     original_name: string;
+    place_of_birth: string;
     popularity: number;
-    profile_path: string;
-    known_for: Movie[];
+    profile_path: string; 
+    known_for: Movie[]; 
 }
-
 interface Movie {
     backdrop_path: string;
     id: number;

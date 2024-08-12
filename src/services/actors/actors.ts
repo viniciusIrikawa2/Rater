@@ -1,4 +1,3 @@
-import { Credits } from "../../@Types/credits";
 import { BASEURL } from "../axiosBaseUrl";
 
 export const getActors = async () => {
@@ -12,14 +11,14 @@ export const getActors = async () => {
 
 export const getActorDetails = async (actorId: number) => {
     try {
-        const response = await BASEURL.get(`/person/${actorId}`);       
+        const response = await BASEURL.get(`/person/${actorId}?language=pt-BR`);       
         return response.data;
     } catch (error) {
         throw new Error('Erro na requisição');
     }
 };
 
-export const getMoviesByActor = async (actorId: number): Promise<Credits> => {
+export const getMoviesByActor = async (actorId: number) => {
     try {
         const response = await BASEURL.get(`/person/${actorId}/movie_credits?language=pt-BR`);
         return response.data;

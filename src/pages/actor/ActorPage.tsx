@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { H2 } from "../../components/Title/styles";
-import { ActorWrapper, Container, Movies, MovieWrapper } from "./styles";
-import { getMoviesByActor } from "../../services/actors/actors";
+import { ActorImage, ActorWrapper, Container, InfoWrapper, Movies, MovieWrapper, P, Span } from "./styles";
+import { getActorDetails, getMoviesByActor } from "../../services/actors/actors";
 import { useParams } from "react-router-dom";
 import MovieByActor from "../../components/MovieByActor/MovieByActor";
 import { Movie } from "../../@Types/movies";
+import { Actor } from "../../@Types/actors";
+import { actorImage } from "../../constants";
+import { H3 } from "../../styles.utils/styles";
+import { normalizeBirthDate } from "../../functions/helpers";
 
 const ActorPage = () => {
-  const [movies, setMovies] = useState<any>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [actorDetails, setActorDetails] = useState<Actor>();
   const { id } = useParams();
 
   const fetchMoviesByActor = async () => {
@@ -19,8 +24,18 @@ const ActorPage = () => {
     }
   };
 
+  const fetchActorDetails = async () => {
+    try {
+      const response = await getActorDetails(Number(id));
+      setActorDetails(response)
+    } catch (error) {
+      console.log(error);     
+    }
+  };
+
   useEffect(() => {
     fetchMoviesByActor();
+    fetchActorDetails();
   }, []);
 
   return (
@@ -39,7 +54,22 @@ const ActorPage = () => {
             ))}
           </Movies>
         </MovieWrapper>
-        <ActorWrapper> actor wrapper </ActorWrapper>
+        <ActorWrapper> 
+          <ActorImage src={`${actorImage}${actorDetails?.profile_path}`} alt={actorDetails?.name}/>
+          <H3> {actorDetails?.name} </H3>
+          <InfoWrapper>
+            <Span> Nascido(a) em: </Span>
+            <P> {normalizeBirthDate(actorDetails?.birthday!)} </P>
+          </InfoWrapper>
+          <InfoWrapper>
+            <Span> Origem: </Span>
+            <P> {actorDetails?.place_of_birth} </P>
+          </InfoWrapper>
+          <InfoWrapper>
+            <Span> Sobre: </Span>
+            <P> {actorDetails?.biography} </P>
+          </InfoWrapper>
+        </ActorWrapper>
     </Container>
   )
 }

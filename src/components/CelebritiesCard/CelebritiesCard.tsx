@@ -21,7 +21,7 @@ const CelebritiesCard = ({ movieCast }: MovieCastProps) => {
       <Swiper slidesPerView={5.5} spaceBetween={10}> 
         {celebrities.map((actor: Cast | Actor, index: number) => (
           <SwiperSlide key={actor.id}>
-            <Card imageUrl={`${actorImage}${actor.profile_path}`} onClick={(e) => navigate(`/actor/${actor.id.toString()}`)}>
+            <Card imageUrl={`${actorImage}${actor.profile_path}`} onClick={() => navigate(`/actor/${actor.id.toString()}`)}>
               <Wrapper>
                 <TitleWrapper>
                   <H3> {actor.name} </H3>
