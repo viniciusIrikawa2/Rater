@@ -25,7 +25,7 @@ const Section = ({ sectionName, direction, cardType, movies, movieCast }: ISecti
           {cardType === 'movie' ? (
             <>
               {movies?.map(item => (
-                <MovieCard key={item.id} rating={item.vote_average} title={item.title} imageURL={item.poster_path}/>
+                <MovieCard key={item.id} rating={item.vote_average} title={item.title} imageURL={item.poster_path} movieId={item.id}/>
               ))}
             </>
           ) : (

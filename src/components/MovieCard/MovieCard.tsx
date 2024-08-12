@@ -7,16 +7,17 @@ import { Card } from "./styles";
 interface CardProps {
   rating: number
   title: string
-  imageURL: string
+  imageURL: string,
+  movieId: number,
 }
 
-const MovieCard = ({ rating, title, imageURL }: CardProps) => {
+const MovieCard = ({ rating, title, imageURL, movieId }: CardProps) => {
   return (
     <Card imageURL={`${movieImage}${imageURL}`}>
       <Rating rating={rating} backgroundColor={true}/>
       <MovieInfoWrapper>
         <H3> {title} </H3>
-        <BtnWatchTrailer url="/"/>
+        <BtnWatchTrailer url={`/movie/${movieId}`}/>
       </MovieInfoWrapper>
       <Overlay/>
     </Card>

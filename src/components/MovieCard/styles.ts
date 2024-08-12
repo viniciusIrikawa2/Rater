@@ -8,6 +8,7 @@ export const Card = styled.div<{imageURL: string}>`
     padding: 12px;
     background-image: url(${props => props.imageURL});
     background-size: cover;
+    background-position: center;
     overflow: hidden;
     position: relative;
 `;

@@ -25,7 +25,7 @@ const Movie = () => {
 
     return (
         <>
-            <BannerSection backgroundImg={`${movieImage}/${movieDetails?.poster_path}`}>
+            <BannerSection backgroundImg={`${movieImage}/${movieDetails?.backdrop_path}`}>
                 <BtnWatchTrailer url="#"/>
                 <Overlay/>
             </BannerSection>

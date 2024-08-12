@@ -5,6 +5,9 @@ export const BannerSection = styled.section<{ backgroundImg: string }>`
     padding: 48px;
     border-radius: 24px;
     background-image: url(${props => props.backgroundImg});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: end;
     position: relative;
