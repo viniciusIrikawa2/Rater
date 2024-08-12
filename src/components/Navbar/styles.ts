@@ -8,6 +8,6 @@ export const Logo = styled.img`
 
 export const Header = styled.header`
     background-color: #121212;
-    padding: 3% 2%;
+    padding: 3% 0%;
     position: relative;
 `;

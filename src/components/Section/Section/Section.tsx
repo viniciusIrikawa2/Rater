@@ -24,7 +24,7 @@ const Section = ({ sectionName, direction, cardType, movies, movieCast }: ISecti
         <SectionTitle text={sectionName}/>
         <CardListWrapper direction={direction}>
           {cardType === 'movie' ? (
-              <Swiper slidesPerView={4} spaceBetween={10}>
+              <Swiper slidesPerView={4} spaceBetween={30}>
                 {movies?.map(item => (
                   <SwiperSlide key={item.id}>
                     <MovieCard key={item.id} rating={item.vote_average} title={item.title} imageURL={item.poster_path} movieId={item.id}/>

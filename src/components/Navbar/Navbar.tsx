@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <Header>
-        <Logo src="/images/rater_logo.png" onClick={() => navigate('/')}/>
+        <Logo src="/images/rater_logo.png" alt='Rater Logo' onClick={() => navigate('/')}/>
         <FilterBar/>
     </Header>
   )
