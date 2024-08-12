@@ -13,7 +13,6 @@ interface MovieCastProps {
 
 const CelebritiesCard = ({ movieCast }: MovieCastProps) => {
   const { celebrities, celebritiesBirthdays } = useFetchCelebrities(movieCast);
-console.log(celebrities);
 
   return (
     <>
