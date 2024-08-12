@@ -20,7 +20,7 @@ const useFetchFeaturedMovie = (movieID: number) => {
   
     useEffect(() => {  
        fetchMovieDetails(movieID);
-    }, []);
+    }, [movieID]);
 
     return { movieDetails, genres };
 };

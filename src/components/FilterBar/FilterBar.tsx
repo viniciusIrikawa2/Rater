@@ -33,7 +33,11 @@ const FilterBar = () => {
       )  
   ), [search, movies]);
 
-  const handleBlur = () => setSearch('');
+  const handleBlur = () => {
+    setTimeout(() => {
+      setSearch('');
+    }, 200)
+  }
 
   return (
     <InputWrapper>
