@@ -31,3 +31,12 @@ export const getMovieCredits = async (movieID: number) => {
         throw new Error('Erro na requisição');
     }
 };
+
+export const getGenres = async () => {
+    try {
+        const response = await BASEURL.get('/genre/movie/list');
+        return response.data;
+    } catch (error) {
+        throw new Error('Erro na requisição');
+    }
+};

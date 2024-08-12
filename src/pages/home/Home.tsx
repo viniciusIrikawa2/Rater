@@ -1,11 +1,13 @@
 import MainSection from "../../components/Section/Main/MainSection";
 import Section from "../../components/Section/Section/Section";
+import useFetchGenres from "../../hooks/useFetchGenres";
 import useFetchNowPlayingMovies from "../../hooks/useFetchNowPlayingMovies";
 import useMovieStore from "../../store/useMovieStore ";
 
 const Home = () => {
   const {movies} = useMovieStore();
   useFetchNowPlayingMovies();
+  useFetchGenres();
 
   return (
     <>

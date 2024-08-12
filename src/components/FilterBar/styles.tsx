@@ -31,6 +31,7 @@ export const FilterButton = styled.button`
 `;
 
 export const SearchResultsWrapper = styled.div`
+    width: 100%;
     position: absolute;
     top: 100%;
     left: 0;

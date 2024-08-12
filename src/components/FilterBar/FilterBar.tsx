@@ -36,7 +36,7 @@ const FilterBar = () => {
   const handleBlur = () => {
     setTimeout(() => {
       setSearch('');
-    }, 200)
+    }, 100)
   }
 
   return (

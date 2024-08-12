@@ -32,6 +32,7 @@ export const Overlay = styled.div`
     top: 0;
     left: 0;
     z-index: 5;
+    border-radius: 24px;
 `;
 
 export const MovieInfoWrapper = styled.div`
