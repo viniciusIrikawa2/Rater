@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getGenres } from "../services/movies/movies";
-import { IGenre } from "../@Types/genres";
+import useGenresStore from "../store/useGenres.store";
 
 const useFetchGenres = () => {
-    const [genres, setGenres] = useState<IGenre[]>([]);
+    const { setGenres } = useGenresStore();
 
     const fetchGenres = async () => {
         try {
