@@ -45,6 +45,7 @@ const ActorPage = () => {
           <Movies>
             {movies.map((movie: Movie) => (
                <MovieByActor key={movie.id}
+                movieID={movie.id}
                 imageUrl={movie.poster_path} 
                 movieTitle={movie.title} 
                 rating={movie.vote_average}

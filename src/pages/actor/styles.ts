@@ -9,14 +9,14 @@ export const MovieWrapper = styled.div`
 `;
 
 export const Movies = styled.div`
-    border: 2px solid green;
     display: flex;
     flex-flow: wrap;
-    justify-content: space-around;
+    height: 90vh;
+    overflow-y: scroll;
+    margin-right: 1%;
 `;
 
 export const ActorWrapper = styled.div`
-    border: 2px solid purple;
     width: 30%;
 `;
 

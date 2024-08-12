@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     flex-direction: row;
     width: 33%;
     margin: 3% 0;
+    cursor: pointer;
 `;
 
 export const MovieInfo = styled.div`
