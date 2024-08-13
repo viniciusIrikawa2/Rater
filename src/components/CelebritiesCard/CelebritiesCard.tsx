@@ -18,7 +18,16 @@ const CelebritiesCard = ({ movieCast }: MovieCastProps) => {
 
   return (
     <>
-      <Swiper slidesPerView={5.5} spaceBetween={60}> 
+      <Swiper breakpoints={{
+                600: { 
+                  slidesPerView: 5.5,
+                  spaceBetween: 60
+                },
+                0: { 
+                  slidesPerView: 2.5,
+                  spaceBetween: 70
+                }
+              }}> 
         {celebrities.map((actor: Cast | Actor, index: number) => (
           <SwiperSlide key={actor.id}>
             <Card imageUrl={`${actorImage}${actor.profile_path}`} onClick={() => navigate(`/actor/${actor.id.toString()}`)}>

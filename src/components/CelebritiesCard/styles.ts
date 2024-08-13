@@ -11,6 +11,10 @@ export const Card = styled.div<{ imageUrl: string }>`
     background-position: center;
     overflow: hidden;
     position: relative;
+    
+    @media (max-width: 600px){
+        width: 166.5px;
+    }  
 `;
 
 export const Wrapper = styled.div`
@@ -30,6 +34,10 @@ export const H3 = styled.h3`
     font-weight: 700;
     font-family: system-ui;
     font-size: 20px;
+    
+    @media (max-width: 600px){
+        font-size: 15px;
+    }  
 `;
 
 export const Age = styled.span`
@@ -39,6 +47,10 @@ export const Age = styled.span`
     font-size: 14px;
     line-height: 22.4px;
     margin-left: 5px;
+    
+    @media (max-width: 600px){
+        font-size: 12px;
+    }  
 `;
 
 export const Character = styled.span`
