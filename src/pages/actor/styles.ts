@@ -69,3 +69,11 @@ export const P = styled.p`
     font-size: 16px;
     line-height: 21px;
 `;
+
+export const H2 = styled.h2`
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0px 0px 10px 0px; 
+`;

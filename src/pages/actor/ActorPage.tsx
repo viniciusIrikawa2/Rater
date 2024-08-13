@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { H2 } from "../../components/Title/styles";
-import { AboutWrapper, ActorImage, ActorWrapper, Container, InfoWrapper, Movies, MovieWrapper, P, Span } from "./styles";
+import { AboutWrapper, ActorImage, ActorWrapper, Container, InfoWrapper, Movies, MovieWrapper, P, Span, H2 } from "./styles";
 import { getActorDetails, getMoviesByActor } from "../../services/actors/actors";
 import { useParams } from "react-router-dom";
 import MovieByActor from "../../components/MovieByActor/MovieByActor";
 import { Movie } from "../../@Types/movies";
 import { Actor } from "../../@Types/actors";
 import { actorImage } from "../../constants";
-import { H3 } from "../../styles.utils/styles";
 import { normalizeBirthDate } from "../../functions/helpers";
 
 const ActorPage = () => {
@@ -57,7 +55,7 @@ const ActorPage = () => {
         </MovieWrapper>
         <ActorWrapper> 
           <ActorImage src={`${actorImage}${actorDetails?.profile_path}`} alt={actorDetails?.name}/>
-          <H3> {actorDetails?.name} </H3>
+          <H2> {actorDetails?.name} </H2>
           <InfoWrapper>
             <Span> Nascido(a) em: </Span>
             <P> {normalizeBirthDate(actorDetails?.birthday!)} </P>
