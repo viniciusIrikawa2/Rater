@@ -27,6 +27,10 @@ export const P = styled.p`
 
     @media (max-width: 600px){
         width: 100%;
+        overflow: hidden;
+         display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
     }
 `;
 

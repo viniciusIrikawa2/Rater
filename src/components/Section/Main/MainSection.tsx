@@ -2,6 +2,7 @@ import { Movie } from "../../../@Types/movies"
 import useMovieStore from "../../../store/useMovieStore "
 import { CardListWrapper, DesktopView, MobileView } from "../../../styles.utils/styles"
 import FeaturedCard from "../../FeaturedCard/FeaturedCard"
+import FeaturedCardMobile from "../../FeaturedCard/MobileView/FeaturedCardMobile"
 import MovieCard from "../../MovieCard/MovieCard"
 import SectionTitle from "../../Title/SectionTitle"
 import Section from "../Section/Section"
@@ -14,7 +15,14 @@ const MainSection = () => {
     <MainContainer>
         <MainFeaturedWrapper>
           {movies.length > 0 ? (
-            <FeaturedCard movies={movies[0]} />
+            <>
+              <DesktopView>
+                <FeaturedCard movies={movies[0]} />
+              </DesktopView>
+              <MobileView>
+                <FeaturedCardMobile movies={movies[0]}/>
+              </MobileView>
+            </>
           ) : (
             <p>Erro ao carregar o filme</p>
           )}

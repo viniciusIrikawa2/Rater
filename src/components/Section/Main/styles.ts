@@ -8,7 +8,7 @@ export const MainContainer = styled.main`
     
     @media (max-width: 600px){
         flex-direction: column;
-        width: 95%;
+        width: 100%;
     }  
 `;
 
