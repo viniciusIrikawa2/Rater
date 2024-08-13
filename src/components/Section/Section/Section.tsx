@@ -19,7 +19,7 @@ interface ISectionNameProps{
   movieCast?: Cast[]
 }
 
-const Section = ({ sectionName, direction, cardType, movies, movieCast }: ISectionNameProps) => {
+const Section = ({ sectionName, direction, cardType, movies, movieCast }: ISectionNameProps) => {  
   return (
     <SectionContainer>
         <SectionTitle text={sectionName}/>

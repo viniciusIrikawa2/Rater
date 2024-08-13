@@ -20,7 +20,7 @@ const useFetchMovieCredits = ( movieID: number ) => {
     
     useEffect(() => {
         fetchCredits();
-    }, []);
+    }, [movieID]);
 
     return { director, writers, actors };
 };

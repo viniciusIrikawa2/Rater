@@ -1,4 +1,4 @@
-import { Movie, MovieDetails } from "../../@Types/movies";
+import { Movie, MovieDetails, MovieRecommendation } from "../../@Types/movies";
 import { BASEURL } from "../axiosBaseUrl"
 
 interface NowPlayingResponse {
@@ -36,6 +36,15 @@ export const getGenres = async () => {
     try {
         const response = await BASEURL.get('/genre/movie/list');
         return response.data.genres;
+    } catch (error) {
+        throw new Error('Erro na requisição');
+    }
+};
+
+export const getRecommendations = async (movieID: number): Promise<MovieRecommendation[]> => {
+    try {
+        const response = await BASEURL.get(`/movie/${movieID}/recommendations`);
+        return response.data.results;
     } catch (error) {
         throw new Error('Erro na requisição');
     }
