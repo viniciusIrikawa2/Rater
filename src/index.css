@@ -10,12 +10,12 @@ body{
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: rgb(43, 42, 42);
+    background: rgb(32, 32, 32);
     border-radius: 5px;
   }
   

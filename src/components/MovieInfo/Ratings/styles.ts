@@ -16,6 +16,10 @@ export const RatingWrapper = styled.div<{backgroundColor: boolean}>`
     justify-content: center;
     position: relative;
     z-index: 10;
+
+    @media (max-width: 600px){
+        font-size: 12px;
+    }
 `;
 
 export const IconStar = styled.img`

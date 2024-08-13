@@ -17,6 +17,6 @@ export const H2 = styled.h2`
     }
 
     @media (max-width: 600px){
-        margin-bottom: 7%;
+        margin-bottom: 5%;
     }  
 `;

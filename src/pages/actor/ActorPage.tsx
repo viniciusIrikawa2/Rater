@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { H2 } from "../../components/Title/styles";
-import { ActorImage, ActorWrapper, Container, InfoWrapper, Movies, MovieWrapper, P, Span } from "./styles";
+import { AboutWrapper, ActorImage, ActorWrapper, Container, InfoWrapper, Movies, MovieWrapper, P, Span } from "./styles";
 import { getActorDetails, getMoviesByActor } from "../../services/actors/actors";
 import { useParams } from "react-router-dom";
 import MovieByActor from "../../components/MovieByActor/MovieByActor";
@@ -68,7 +68,9 @@ const ActorPage = () => {
           </InfoWrapper>
           <InfoWrapper>
             <Span> Sobre: </Span>
-            <P> {actorDetails?.biography} </P>
+            <AboutWrapper>
+              <P> {actorDetails?.biography} </P>
+            </AboutWrapper>
           </InfoWrapper>
         </ActorWrapper>
     </Container>

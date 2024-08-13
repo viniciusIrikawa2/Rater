@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
     width: 33%;
     margin: 3% 0;
     cursor: pointer;
+
+    @media (max-width: 600px){
+        width: 50%;
+    }
 `;
 
 export const MovieInfo = styled.div`
