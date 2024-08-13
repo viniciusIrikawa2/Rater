@@ -18,7 +18,7 @@ export const RatingWrapper = styled.div<{backgroundColor: boolean}>`
     z-index: 10;
 
     @media (max-width: 600px){
-        font-size: 12px;
+        font-size: 15px;
     }
 `;
 

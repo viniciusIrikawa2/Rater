@@ -50,5 +50,22 @@ export const CardListWrapper = styled.div<CardListWrapperProps>`
     display: flex;
     align-items: center;
     flex-direction: ${props => props.direction || 'row'};
-    gap: 20px;
+    gap: 15px;
+    margin-top: 5%;
+`;
+
+export const DesktopView = styled.div`
+    display: block;
+
+    @media (max-width: 600px){
+        display: none;
+    }
+`;
+    
+export const MobileView = styled.div`
+    display: none;
+
+    @media (max-width: 600px){
+        display: block;
+    }
 `;

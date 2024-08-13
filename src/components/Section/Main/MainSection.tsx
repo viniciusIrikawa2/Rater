@@ -1,9 +1,10 @@
 import { Movie } from "../../../@Types/movies"
 import useMovieStore from "../../../store/useMovieStore "
-import { CardListWrapper } from "../../../styles.utils/styles"
+import { CardListWrapper, DesktopView, MobileView } from "../../../styles.utils/styles"
 import FeaturedCard from "../../FeaturedCard/FeaturedCard"
 import MovieCard from "../../MovieCard/MovieCard"
 import SectionTitle from "../../Title/SectionTitle"
+import Section from "../Section/Section"
 import { MainContainer, MainFeaturedWrapper, SecondaryFeaturedWrapper } from "./styles"
 
 const MainSection = () => {
@@ -20,12 +21,17 @@ const MainSection = () => {
         </MainFeaturedWrapper>
 
         <SecondaryFeaturedWrapper>
-          <SectionTitle text="Destaques também"/>
+          <DesktopView>
+            <SectionTitle text="Destaques também"/>
             <CardListWrapper direction="column">
-              {movies.slice(1,4).map((movie: Movie) => (
-                <MovieCard key={movie.id} rating={movie.vote_average} title={movie.title} imageURL={movie.poster_path} movieId={movie.id}/>
-              ))}
+                {movies.slice(1,4).map((movie: Movie) => (
+                  <MovieCard key={movie.id} rating={movie.vote_average} title={movie.title} imageURL={movie.poster_path} movieId={movie.id}/>
+                ))}
             </CardListWrapper>
+          </DesktopView>
+          <MobileView>
+            <Section sectionName='Últimos lançamentos' direction="row" cardType="movie" movies={movies.slice(1,4)}/>
+          </MobileView>
         </SecondaryFeaturedWrapper>
     </MainContainer>
   )
