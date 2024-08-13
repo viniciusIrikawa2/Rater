@@ -1,5 +1,5 @@
 import { H1, MovieInfoWrapper, Overlay } from "../../styles.utils/styles"
-import BtnWatchTrailer from "../Buttons/BtnWatchTrailer"
+import BtnWatchTrailer from "../Buttons/WatchTrailer/BtnWatchTrailer"
 import FeatureLabel from "../Labels/FeaturedLabel/FeatureLabel"
 import { Card, P, Span, Wrapper } from './styles'
 import Rating from "../MovieInfo/Ratings/Rating"

@@ -95,3 +95,18 @@ export const FilterWrapper = styled.div`
     color: #fff;
     margin-top: 2%;
 `;
+
+export const GenresWrapper = styled.div`
+    margin: 2% 0;
+    display: flex;
+    flex-flow: wrap;
+`;
+
+export const HR = styled.hr`
+    background-color: #3A3A3A;
+    width: 90%;
+    height: 2px;
+    border: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+`;

@@ -3,7 +3,7 @@ import { BannerSection, MovieInfoSection, Span, Wrapper, WrapperTitle } from "./
 import useFetchFeaturedMovie from "../../hooks/useFetchFeaturedMovie";
 import { movieImage } from "../../constants";
 import { H1, Overlay } from "../../styles.utils/styles";
-import BtnWatchTrailer from "../../components/Buttons/BtnWatchTrailer";
+import BtnWatchTrailer from "../../components/Buttons/WatchTrailer/BtnWatchTrailer";
 import Genre from "../../components/Labels/GenreLabel/Genre";
 import Rating from "../../components/MovieInfo/Ratings/Rating";
 import { convertDurationToHours } from "../../functions/helpers";

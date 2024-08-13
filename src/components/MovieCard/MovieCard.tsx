@@ -1,6 +1,6 @@
 import { movieImage } from "../../constants";
 import { H3, MovieInfoWrapper, Overlay } from "../../styles.utils/styles";
-import BtnWatchTrailer from "../Buttons/BtnWatchTrailer";
+import BtnWatchTrailer from "../Buttons/WatchTrailer/BtnWatchTrailer";
 import Rating from "../MovieInfo/Ratings/Rating";
 import { Card } from "./styles";
 

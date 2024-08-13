@@ -35,7 +35,7 @@ export const getMovieCredits = async (movieID: number) => {
 export const getGenres = async () => {
     try {
         const response = await BASEURL.get('/genre/movie/list');
-        return response.data;
+        return response.data.genres;
     } catch (error) {
         throw new Error('Erro na requisição');
     }

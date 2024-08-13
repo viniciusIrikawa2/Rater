@@ -3,12 +3,13 @@ import { IGenre } from "../@Types/genres";
 
 interface GenresStore{
     genres: IGenre[],
-    setGenres: (genre: IGenre) => void
+    setGenres: (genre: IGenre[]) => void
 }
 
 const useGenresStore = create<GenresStore>((set) =>( {
     genres: [],
-    setGenres: (genre) => set((state) => ({  genres: [...state.genres, genre] }))
+    setGenres: (genres) => set({ genres })
 }));
 
 export default useGenresStore;
+
