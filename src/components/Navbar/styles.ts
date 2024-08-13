@@ -9,5 +9,13 @@ export const Logo = styled.img`
 export const Header = styled.header`
     background-color: #121212;
     padding: 3% 0%;
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    
+    @media (max-width: 600px){
+        flex-direction: column;
+        align-items: center;
+        margin: 2% 0;
+    }   
 `;

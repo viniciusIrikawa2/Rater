@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const InputWrapper = styled.div`
-    position: absolute;
-    top: 30%;
-    left: 50%;
+    margin-left: 40%;
     transform: translateX(-50%);
     z-index: 20;
     display: flex;
     align-items: center;
+
+     @media (max-width: 600px){
+        margin-left: 0%;
+        transform: translateX(0%);
+        margin: 5% 0;
+    }  
 `;
 
 export const Input = styled.input`
@@ -40,6 +44,10 @@ export const SearchResultsWrapper = styled.div`
     padding: 12px;
     color: #fff;
     margin-top: 2%;
+    
+    @media (max-width: 600px){
+        width: 95%;
+    }  
 `;
 
 export const ResultItem = styled.div`
@@ -94,6 +102,10 @@ export const FilterWrapper = styled.div`
     padding: 12px;
     color: #fff;
     margin-top: 2%;
+
+    @media (max-width: 600px){
+        width: 95%;
+    }  
 `;
 
 export const GenresWrapper = styled.div`
