@@ -9,7 +9,12 @@ export const MainContainer = styled.main`
     @media (max-width: 600px){
         flex-direction: column;
         width: 100%;
-    }  
+    }
+
+    @media screen and (min-width: 1800px){
+        justify-content: space-around;
+    }
+
 `;
 
 export const MainFeaturedWrapper = styled.div`
