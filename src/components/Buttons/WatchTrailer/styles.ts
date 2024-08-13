@@ -20,12 +20,17 @@ export const Button = styled.button`
     z-index: 15;
     
     @media (max-width: 600px){
-        width: 142px;
-        font-size: 12px;
+        width: 100%;
+        font-size: 15px;
+        justify-content: center;
     }  
-`;
-
+    `;
+    
 export const IconPlay = styled.img`
     width: 20px;
     height: 20px;
+
+    @media (max-width: 600px){
+        margin-left: 5px;
+    }  
 `;

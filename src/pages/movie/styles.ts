@@ -12,6 +12,11 @@ export const BannerSection = styled.section<{ backgroundImg: string }>`
     align-items: end;
     position: relative;
     margin-bottom: 1%;
+    
+    @media (max-width: 600px){
+        padding: 16px;
+        height: 200px;
+    }
 `;
 
 export const MovieInfoSection = styled.section`
