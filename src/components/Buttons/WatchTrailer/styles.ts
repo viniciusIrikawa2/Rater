@@ -18,6 +18,11 @@ export const Button = styled.button`
     justify-content: space-around;
     position: relative;
     z-index: 15;
+    
+    @media (max-width: 600px){
+        width: 142px;
+        font-size: 12px;
+    }  
 `;
 
 export const IconPlay = styled.img`

@@ -11,4 +11,9 @@ export const Card = styled.div<{imageURL: string}>`
     background-position: center;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: 600px){
+        width: 166.5px;
+        height: 284px;
+    }  
 `;

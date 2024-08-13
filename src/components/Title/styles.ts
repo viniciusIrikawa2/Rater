@@ -16,4 +16,8 @@ export const H2 = styled.h2`
         margin-right: 8px;
         border-radius: 5px;
     }
+
+    @media (max-width: 600px){
+        margin-bottom: 10%;
+    }  
 `;

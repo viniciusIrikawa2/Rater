@@ -3,6 +3,7 @@ import useMovieStore from "../../../store/useMovieStore "
 import { CardListWrapper } from "../../../styles.utils/styles"
 import FeaturedCard from "../../FeaturedCard/FeaturedCard"
 import MovieCard from "../../MovieCard/MovieCard"
+import SectionTitle from "../../Title/SectionTitle"
 import { MainContainer, MainFeaturedWrapper, SecondaryFeaturedWrapper } from "./styles"
 
 const MainSection = () => {
@@ -19,6 +20,7 @@ const MainSection = () => {
         </MainFeaturedWrapper>
 
         <SecondaryFeaturedWrapper>
+          <SectionTitle text="Destaques também"/>
             <CardListWrapper direction="column">
               {movies.slice(1,4).map((movie: Movie) => (
                 <MovieCard key={movie.id} rating={movie.vote_average} title={movie.title} imageURL={movie.poster_path} movieId={movie.id}/>

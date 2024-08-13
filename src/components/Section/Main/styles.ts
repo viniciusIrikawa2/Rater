@@ -2,8 +2,14 @@ import styled from "styled-components";
 
 export const MainContainer = styled.main`
     display: flex;
+    flex-direction: row;
     justify-content: center;
     overflow: hidden;
+    
+    @media (max-width: 600px){
+        flex-direction: column;
+        width: 95%;
+    }  
 `;
 
 export const MainFeaturedWrapper = styled.div`
