@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const H2 = styled.h2`
     color: #ffff;
-    font-family: system-ui;
     display: flex;
     align-items: center;
     margin-bottom: 1.5%;
@@ -18,6 +17,6 @@ export const H2 = styled.h2`
     }
 
     @media (max-width: 600px){
-        margin-bottom: 10%;
+        margin-bottom: 7%;
     }  
 `;

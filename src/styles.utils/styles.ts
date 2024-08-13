@@ -8,6 +8,10 @@ export const H1 = styled.h1`
     font-weight: 700;
     color: #fff;
     line-height: 48.41px;
+
+    @media (max-width: 600px){
+        font-size: 20px;
+    }  
 `;
 
 export const H3 = styled.h3`

@@ -24,6 +24,10 @@ export const P = styled.p`
     color: #EEEEEE;
     margin: 1% 0px 2% 0px;
     width: 80%;
+
+    @media (max-width: 600px){
+        width: 100%;
+    }
 `;
 
 export const Span = styled.span`
