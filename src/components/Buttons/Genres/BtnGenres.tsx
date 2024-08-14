@@ -1,27 +1,17 @@
 import { Button } from "./styles";
 import { IGenre } from "../../../@Types/genres";
+import useSelectedGenresStore from "../../../store/useSelectedGenresStore";
 
 interface IGenreProps {
     genre: IGenre;
-    selectedGenres: IGenre[];
-    setSelectedGenres: (genre: IGenre[]) => void;
 }
 
-const GenreBtn = ({ genre, selectedGenres, setSelectedGenres }: IGenreProps) => {
+const GenreBtn = ({ genre }: IGenreProps) => {
+  const { selectedGenres, setSelectedGenres } = useSelectedGenresStore();
   const isSelected = selectedGenres.some((g) => g.id === genre.id);
 
   const handleSelectButton = () => {
-    if(isSelected) {
-      setSelectedGenres(selectedGenres.filter((g) => g.id !== genre.id));
-    }else {
-      setSelectedGenres([
-        ...selectedGenres,
-        {
-          id: genre.id,
-          name: genre.name
-        }
-      ]);
-    }
+    setSelectedGenres(genre);
   }
   
   return (

@@ -55,7 +55,7 @@ export const CardListWrapper = styled.div<CardListWrapperProps>`
     align-items: center;
     flex-direction: ${props => props.direction || 'row'};
     gap: 15px;
-    margin-top: 5%;
+    margin-top: 3%;
 `;
 
 export const DesktopView = styled.div`
