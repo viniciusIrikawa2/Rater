@@ -1,20 +1,33 @@
-import { useState } from "react";
 import { Button } from "./styles";
+import { IGenre } from "../../../@Types/genres";
 
 interface IGenreProps {
-    genre: string
+    genre: IGenre;
+    selectedGenres: IGenre[];
+    setSelectedGenres: (genre: IGenre[]) => void;
 }
 
-const GenreBtn = ({ genre }: IGenreProps) => {
-  const [isSelected, setIsSelected] = useState(false);
-  
+const GenreBtn = ({ genre, selectedGenres, setSelectedGenres }: IGenreProps) => {
+  const isSelected = selectedGenres.some((g) => g.id === genre.id);
+
   const handleSelectButton = () => {
-    setIsSelected((prev) => !prev);
+    if(isSelected) {
+      setSelectedGenres(selectedGenres.filter((g) => g.id !== genre.id));
+    }else {
+      setSelectedGenres([
+        ...selectedGenres,
+        {
+          id: genre.id,
+          name: genre.name
+        }
+      ]);
+    }
   }
   
-
   return (
-    <Button onClick={handleSelectButton} isSelected={isSelected}>{genre}</Button>
+    <Button onClick={handleSelectButton} isSelected={isSelected}>
+      {genre.name}
+    </Button>
   )
 }
 

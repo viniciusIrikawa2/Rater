@@ -6,8 +6,9 @@ import { IGenre } from "../../../@Types/genres";
 
 const FilterBtn = () => {
   const [filterIsOpen, setFilterIsOpen] = useState<boolean>(false);
+  const [selectedGenres, setSelectedGenres] = useState<IGenre[]>([]);
   const { genres } = useGenresStore();
-
+  
   return (
     <>
       <FilterButton onClick={() => setFilterIsOpen(!filterIsOpen)}>
@@ -21,7 +22,7 @@ const FilterBtn = () => {
           </p>
           <GenresWrapper>
             {genres.map((genre: IGenre) => (
-              <GenreBtn key={genre.id} genre={genre.name} />
+              <GenreBtn key={genre.id} genre={genre} selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}/>
             ))}
           </GenresWrapper>
           <HR />
