@@ -25,6 +25,7 @@ export const FilterButton = styled.button`
     height: 48px;
     margin-left: 3%;
     cursor: pointer;
+    position: relative;
 `;
 
 export const GenresWrapper = styled.div`
@@ -40,4 +41,18 @@ export const HR = styled.hr`
     border: none;
     margin-left: 50%;
     transform: translateX(-50%);
+`;
+
+export const Counter = styled.span`
+    border-radius: 99px;
+    color: #EEEE;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #6E6E6E;
+    padding: 2px, 4px, 2px, 4px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: -5px;
 `;

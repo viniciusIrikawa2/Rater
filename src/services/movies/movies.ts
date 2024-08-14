@@ -49,3 +49,12 @@ export const getRecommendations = async (movieID: number): Promise<MovieRecommen
         throw new Error('Erro na requisição');
     }
 };
+
+export const filterByGenres = async (genreIDs: string) => {
+    try {
+        const response = await BASEURL.get(`/discover/movie?with_genres=${genreIDs}`);
+        return response.data.results;
+    } catch (error) {
+        throw new Error('Erro na requisição');
+    }
+};
