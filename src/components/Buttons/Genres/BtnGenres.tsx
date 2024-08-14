@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "./styles";
 
 interface IGenreProps {
@@ -5,8 +6,15 @@ interface IGenreProps {
 }
 
 const GenreBtn = ({ genre }: IGenreProps) => {
+  const [isSelected, setIsSelected] = useState(false);
+  
+  const handleSelectButton = () => {
+    setIsSelected((prev) => !prev);
+  }
+  
+
   return (
-    <Button>{genre}</Button>
+    <Button onClick={handleSelectButton} isSelected={isSelected}>{genre}</Button>
   )
 }
 
