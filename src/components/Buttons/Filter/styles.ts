@@ -56,3 +56,20 @@ export const Counter = styled.span`
     top: 0;
     left: -5px;
 `;
+
+export const ShowMoreBtn = styled.div`
+    color: #6E6E6E;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin: 2% 0;
+    display: flex;
+    align-items: center;
+`;
+
+export const Arrow = styled.img`
+    width: 14px;
+    height: 14px;
+    margin-left: 3%;
+`;
