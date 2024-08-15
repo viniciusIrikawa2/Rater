@@ -7,7 +7,7 @@ Rater é uma plataforma online de filmes! (https://ratermovies.netlify.app/)
 - Typescript (tipagem)
 - Axios (requisições http)
 - Styled Components (estilização)
-- Zustant (gerenciamento de estados)
+- Zustand (gerenciamento de estados)
 
 ## 🚀 Começar
 1- Abra o terminal git e clone o projeto
