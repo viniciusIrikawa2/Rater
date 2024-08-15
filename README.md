@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+## 🤔Sobre
+Rater é uma plataforma online de filmes! (https://ratermovies.netlify.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ⚙️Tecnologias
+- React Js (construção do app)
+- Vite (biblioteca)
+- Typescript (tipagem)
+- Axios (requisições http)
+- Styled Components (estilização)
+- Zustant (gerenciamento de estados)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Começar
+1- Abra o terminal git e clone o projeto
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+git clone https://github.com/viniciusIrikawa2/Rater.git
 ```
+2- Abra o projeto em alguma IDE
+3- Instale as dependências
+```
+npm install
+```
+4- Inicie o projeto
+```
+npm run dev
+```
+## 📷Algumas imagens...
+![image](https://github.com/user-attachments/assets/fa7f0855-6b5e-470b-b528-17587cfde301)
+![image](https://github.com/user-attachments/assets/39b39af4-e518-4b70-9ebe-b4605f657c12)
+![image](https://github.com/user-attachments/assets/a5e658ea-81bc-403c-935c-56e15697e95e)
