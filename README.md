@@ -23,7 +23,7 @@ npm install
 ```
 npm run dev
 ```
-## 📷Algumas imagens...
+## 📷Imagens do projeto...
 ![image](https://github.com/user-attachments/assets/fa7f0855-6b5e-470b-b528-17587cfde301)
 ![image](https://github.com/user-attachments/assets/39b39af4-e518-4b70-9ebe-b4605f657c12)
 ![image](https://github.com/user-attachments/assets/a5e658ea-81bc-403c-935c-56e15697e95e)
